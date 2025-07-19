@@ -1,79 +1,79 @@
 #!/usr/bin/env bash
 
-SELECTED_THEME="$(tmux show-option -gv @tokyo-night-tmux_theme)"
-TRANSPARENT_THEME="$(tmux show-option -gv @tokyo-night-tmux_transparent)"
+SELECTED_THEME="$(tmux show-option -gv @monokai-tmux_theme)"
+TRANSPARENT_THEME="$(tmux show-option -gv @monokai-tmux_transparent)"
 
 case $SELECTED_THEME in
-"storm")
+"spectrum")
   declare -A THEME=(
-    ["background"]="#24283b"
-    ["foreground"]="#a9b1d6"
-    ["black"]="#414868"
-    ["blue"]="#7aa2f7"
-    ["cyan"]="#7dcfff"
-    ["green"]="#73daca"
-    ["magenta"]="#bb9af7"
-    ["red"]="#f7768e"
-    ["white"]="#a9b1d6"
-    ["yellow"]="#e0af68"
+    ["background"]="#222222"
+    ["foreground"]="#F8F8F2"
+    ["black"]="#363537"
+    ["blue"]="#FC9867"
+    ["cyan"]="#78DCE8"
+    ["green"]="#A9DC76"
+    ["magenta"]="#AB9DF2"
+    ["red"]="#FF6188"
+    ["white"]="#F8F8F2"
+    ["yellow"]="#FFD866"
 
-    ["bblack"]="#414868"
-    ["bblue"]="#7aa2f7"
-    ["bcyan"]="#7dcfff"
-    ["bgreen"]="#41a6b5"
-    ["bmagenta"]="#bb9af7"
-    ["bred"]="#f7768e"
-    ["bwhite"]="#787c99"
-    ["byellow"]="#e0af68"
+    ["bblack"]="#727072"
+    ["bblue"]="#FC9867"
+    ["bcyan"]="#78DCE8"
+    ["bgreen"]="#A9DC76"
+    ["bmagenta"]="#AB9DF2"
+    ["bred"]="#FF6188"
+    ["bwhite"]="#FCFCFA"
+    ["byellow"]="#FFD866"
   )
   ;;
 
-"day")
+"pro")
   declare -A THEME=(
-    ["background"]="#d5d6db"
-    ["foreground"]="#343b58"
-    ["black"]="#0f0f14"
-    ["blue"]="#34548a"
-    ["cyan"]="#0f4b6e"
-    ["green"]="#33635c"
-    ["magenta"]="#5a4a78"
-    ["red"]="#8c4351"
-    ["white"]="#343b58"
-    ["yellow"]="#8f5e15"
+    ["background"]="#2D2A2E"
+    ["foreground"]="#FCFCFA"
+    ["black"]="#403E41"
+    ["blue"]="#78DCE8"
+    ["cyan"]="#78DCE8"
+    ["green"]="#A9DC76"
+    ["magenta"]="#AB9DF2"
+    ["red"]="#FF6188"
+    ["white"]="#FCFCFA"
+    ["yellow"]="#FFD866"
 
-    ["bblack"]="#9699a3"
-    ["bblue"]="#34548a"
-    ["bcyan"]="#0f4b6e"
-    ["bgreen"]="#33635c"
-    ["bmagenta"]="#5a4a78"
-    ["bred"]="#8c4351"
-    ["bwhite"]="#343b58"
-    ["byellow"]="#8f5815"
+    ["bblack"]="#727072"
+    ["bblue"]="#78DCE8"
+    ["bcyan"]="#78DCE8"
+    ["bgreen"]="#A9DC76"
+    ["bmagenta"]="#AB9DF2"
+    ["bred"]="#FF6188"
+    ["bwhite"]="#FCFCFA"
+    ["byellow"]="#FFD866"
   )
   ;;
 
 *)
-  # Default to night theme
+  # Default to classic Monokai theme
   declare -A THEME=(
-    ["background"]="#1A1B26"
-    ["foreground"]="#a9b1d6"
-    ["black"]="#414868"
-    ["blue"]="#7aa2f7"
-    ["cyan"]="#7dcfff"
-    ["green"]="#73daca"
-    ["magenta"]="#bb9af7"
-    ["red"]="#f7768e"
-    ["white"]="#c0caf5"
-    ["yellow"]="#e0af68"
+    ["background"]="#272822"
+    ["foreground"]="#F8F8F2"
+    ["black"]="#49483E"
+    ["blue"]="#66D9EF"
+    ["cyan"]="#66D9EF"
+    ["green"]="#A6E22E"
+    ["magenta"]="#AE81FF"
+    ["red"]="#F92672"
+    ["white"]="#F8F8F2"
+    ["yellow"]="#E6DB74"
 
-    ["bblack"]="#2A2F41"
-    ["bblue"]="#7aa2f7"
-    ["bcyan"]="#7dcfff"
-    ["bgreen"]="#41a6b5"
-    ["bmagenta"]="#bb9af7"
-    ["bred"]="#ff9e64"
-    ["bwhite"]="#787c99"
-    ["byellow"]="#e0af68"
+    ["bblack"]="#75715E"
+    ["bblue"]="#66D9EF"
+    ["bcyan"]="#66D9EF"
+    ["bgreen"]="#A6E22E"
+    ["bmagenta"]="#AE81FF"
+    ["bred"]="#F92672"
+    ["bwhite"]="#F8F8F2"
+    ["byellow"]="#E6DB74"
   )
   ;;
 esac
@@ -83,9 +83,9 @@ if [ "${TRANSPARENT_THEME}" == 1 ]; then
   THEME["background"]="default"
 fi
 
-THEME['ghgreen']="#3fb950"
-THEME['ghmagenta']="#A371F7"
-THEME['ghred']="#d73a4a"
-THEME['ghyellow']="#d29922"
+THEME['ghgreen']="#A6E22E"
+THEME['ghmagenta']="#AE81FF"
+THEME['ghred']="#F92672"
+THEME['ghyellow']="#E6DB74"
 
 RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounderscore,nodim]"

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# title      Tokyo Night                                              +
+# title      Monokai                                                  +
 # version    1.0.0                                                    +
-# repository https://github.com/logico-dev/tokyo-night-tmux           +
-# author     Lógico                                                   +
-# email      hi@logico.com.ar                                         +
+# repository https://github.com/tmlnv/monokai-tmux                    +
+# author     tmlnv                                                    +
+# email      -                                                        +
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -37,12 +37,12 @@ default_zoom_id_style="dsquare"
 default_terminal_icon=""
 default_active_terminal_icon=""
 
-window_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_window_id_style' | cut -d" " -f2)"
-pane_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_pane_id_style' | cut -d" " -f2)"
-zoom_id_style="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_zoom_id_style' | cut -d" " -f2)"
-terminal_icon="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_terminal_icon' | cut -d" " -f2)"
-active_terminal_icon="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_active_terminal_icon' | cut -d" " -f2)"
-window_tidy="$(echo "$TMUX_VARS" | grep '@tokyo-night-tmux_window_tidy_icons' | cut -d" " -f2)"
+window_id_style="$(echo "$TMUX_VARS" | grep '@monokai-tmux_window_id_style' | cut -d" " -f2)"
+pane_id_style="$(echo "$TMUX_VARS" | grep '@monokai-tmux_pane_id_style' | cut -d" " -f2)"
+zoom_id_style="$(echo "$TMUX_VARS" | grep '@monokai-tmux_zoom_id_style' | cut -d" " -f2)"
+terminal_icon="$(echo "$TMUX_VARS" | grep '@monokai-tmux_terminal_icon' | cut -d" " -f2)"
+active_terminal_icon="$(echo "$TMUX_VARS" | grep '@monokai-tmux_active_terminal_icon' | cut -d" " -f2)"
+window_tidy="$(echo "$TMUX_VARS" | grep '@monokai-tmux_window_tidy_icons' | cut -d" " -f2)"
 
 window_id_style="${window_id_style:-$default_window_id_style}"
 pane_id_style="${pane_id_style:-$default_pane_id_style}"
